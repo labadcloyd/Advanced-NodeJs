@@ -3,7 +3,10 @@ process.env.UV_THREADPOOL_SIZE = OS.cpus().length
 
 console.log(OS.cpus().length)
 const crypto = require('crypto')
-
+/* THE THREADPOOL
+	The threadpool of the libuv has by default only 4 threads, so if you run this script
+	the functions will run in groups of 4
+*/
 const start = Date.now()
 /* FIRST FOUR */
 crypto.pbkdf2('a', 'b', 100000, 512, 'sha512', ()=>{
