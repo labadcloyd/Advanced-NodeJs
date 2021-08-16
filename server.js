@@ -1,6 +1,7 @@
 const app = require('express')();
+require('dotenv').config({path:'./config.env'})
 
-/* This is where nodejs shouldn't be used.
+/* This is when nodejs shouldn't be used:
 	Processes that are cpu intensive will block the server and delay other requests since the event loop is single threaded.
 
 */
